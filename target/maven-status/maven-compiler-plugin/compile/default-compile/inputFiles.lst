@@ -1,0 +1,9 @@
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/model/Article.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/HibernateUtils.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/repositories/AuthorRepo.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/model/Author.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/Application.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/services/AuthorService.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/services/ArticleService.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/repositories/ArticleRepo.java
+/home/formation/Documents/NRouyer/Cours/JEE/tp6/src/main/java/tsi/ensg/articles/controllers/ArticleController.java

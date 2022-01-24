@@ -1,0 +1,9 @@
+tsi/ensg/articles/Application.class
+tsi/ensg/articles/model/Article.class
+tsi/ensg/articles/repositories/ArticleRepo.class
+tsi/ensg/articles/model/Author.class
+tsi/ensg/articles/services/AuthorService.class
+tsi/ensg/articles/repositories/AuthorRepo.class
+tsi/ensg/articles/services/ArticleService.class
+tsi/ensg/articles/controllers/ArticleController.class
+tsi/ensg/articles/HibernateUtils.class

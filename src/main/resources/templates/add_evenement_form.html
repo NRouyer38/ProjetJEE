@@ -1,0 +1,48 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Add Event</title>
+    <meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+<body>
+
+<div class="container">
+
+    <h3>Add New Event</h3>
+    <hr/>
+
+    <form th:action="@{/saveEvenement}" th:object="${evenement}" method="POST">
+
+        <input type="text" th:field="*{intitule}" class="form-control col-4 mb-4" placeholder="Intitulé" />
+
+        <input type="text" th:field="*{theme}" class="form-control col-4 mb-4" placeholder="Théme" />
+
+        <input type="text" th:field="*{date_debut}" class="form-control col-4 mb-4" placeholder="Date" />
+
+        <input type="text" th:field="*{duree}" class="form-control col-4 mb-4" placeholder="Durée" />
+
+        <input type="text" th:field="*{nb_part_max}" class="form-control col-4 mb-4" placeholder="Participant max" />
+
+        <input type="text" th:field="*{description}" class="form-control col-4 mb-4" placeholder="Description" />
+
+        <input type="text" th:field="*{organisateur}" class="form-control col-4 mb-4" placeholder="Organisateur" />
+
+        <input type="text" th:field="*{type_even}" class="form-control col-4 mb-4" placeholder="Type d'événement" />
+
+        <button type="submit" class="btn btn-primary col-2">Save</button>
+        <input type="hidden" th:field="*{id}" />
+
+    </form>
+    <hr/>
+    <a th:href="@{/listEvenement}" class="btn btn-primary">Back to list</a>
+    <a th:href="@{/home}" class="btn btn-primary">Retour à l'accueil</a>
+</div>
+
+</body>
+</html>

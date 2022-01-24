@@ -1,0 +1,58 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List Evenement</title>
+    <meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>List Evenement</h3>
+
+    <hr/>
+    <a th:href="@{/addEvenementForm}" class="btn btn-primary">Add Employee</a>
+    <br/><br/>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <th>Intitule</th>
+            <th>theme</th>
+            <th>date_debut</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="evenement: ${events}">
+            <td th:text="${evenement.intitule}" />
+            <td th:text="${evenement.theme}" />
+            <td th:text="${evenement.date_debut}" />
+            <td th:text="${evenement.duree}" />
+            <td th:text="${evenement.nb_part_max}" />
+            <td th:text="${evenement.description}" />
+            <td th:text="${evenement.organisateur}" />
+            <td th:text="${evenement.type_even}" />
+            <td>
+                <a th:href="@{/updateEvenement(id=${evenement.id})}" class="btn btn-info">Update</a>
+                <a th:href="@{/deleteEvenement(id=${evenement.id})}" class="btn btn-danger ml-2">Delete</a>
+
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <a th:href="@{/home}" class="btn btn-primary">Retour à l'accueil</a>
+</div>
+
+
+</body>
+
+</html>
