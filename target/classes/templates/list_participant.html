@@ -25,6 +25,9 @@
             <th>prenom</th>
             <th>nom</th>
             <th>email</th>
+            <th>date naiss.</th>
+            <th>organisation</th>
+            <th>observation</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -33,6 +36,9 @@
             <td th:text="${participant.prenom}" />
             <td th:text="${participant.nom}" />
             <td th:text="${participant.email}" />
+            <td th:text="${participant.date_naiss}" />
+            <td th:text="${participant.organisation}" />
+            <td th:text="${participant.observations}" />
             <td>
                 <a th:href="@{/updateParticipant(id=${participant.id})}" class="btn btn-info">Update</a>
                 <a th:href="@{/deleteParticipant(id=${participant.id})}" class="btn btn-danger ml-2">Delete</a>

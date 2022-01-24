@@ -21,7 +21,11 @@ public class EvenementController{
     @Autowired
     ParticipantService participantService;
 
-
+    /**
+     * page for Get list of Evenement
+     * @param model
+     * @return list_evenement.html in /listEvenement
+     */
     @GetMapping("/listEvenement")
     public String evenementList (Model model) {
 
@@ -30,12 +34,23 @@ public class EvenementController{
         return "list_evenement";
     }
 
+    /**
+     * page for Get form for add an Evenement
+     * @param model
+     * @return add_evenement_form.html in /addEvenementForm
+     */
     @GetMapping("/addEvenementForm")
     public String evenementForm (Model model) {
         model.addAttribute("evenement", new Evenement());
         return "add_evenement_form";
     }
 
+    /**
+     * Save with Post an Evenement
+     * @param evenement
+     * @param model
+     * @return redirect to list_evenement.html in /listEvenement
+     */
     @PostMapping("/saveEvenement")
     public String evenementSubmit(@ModelAttribute Evenement evenement, Model model) {
         model.addAttribute("evenement", evenement);
@@ -43,6 +58,13 @@ public class EvenementController{
         return "redirect:/listEvenement";
     }
 
+    /**
+     * Get form for update an Evenement selected
+     * @param id
+     * @param model
+     * @return add_evenement_form.html in /addEvenementForm
+     * with select Evenement
+     */
     @GetMapping("/updateEvenement")
     public String showUpdateForm(@RequestParam Long id, Model model) {
 
@@ -51,12 +73,21 @@ public class EvenementController{
         return "add_evenement_form";
     }
 
+    /**
+     * Delete selected Evenement
+     * @param id
+     * @return redirect to list_evenement.html in /listEvenement
+     */
     @GetMapping("/deleteEvenement")
     public String deleteEmployee(@RequestParam Long id) {
         evenementService.deleteById(id);
         return "redirect:/listEvenement";
     }
 
+    /**
+     * Home page with link on /listEvenement and /listParticipant
+     * @return
+     */
     @GetMapping("/home")
     public String home () {
         return "home.html";
