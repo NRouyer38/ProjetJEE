@@ -6,15 +6,9 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.servlet.ModelAndView;
 import tsi.ensg.projet.model.Evenement;
-import tsi.ensg.projet.model.Participant;
-import tsi.ensg.projet.repositories.EvenementRepo;
 import tsi.ensg.projet.services.ParticipantService;
 import tsi.ensg.projet.services.EvenementService;
-
-import java.util.List;
-import java.util.Scanner;
 
 
 @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
@@ -65,6 +59,7 @@ public class EvenementController{
 
     @GetMapping("/home")
     public String home () {
-        return "JEEHome.html";
+        return "home.html";
     }
+
 }

@@ -1,0 +1,51 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List Evenement</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>List Participant</h3>
+
+    <hr/>
+    <a th:href="@{/addParticipantForm}" class="btn btn-primary">Add Participant</a>
+    <br/><br/>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <th>prenom</th>
+            <th>nom</th>
+            <th>email</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="participant: ${participants}">
+            <td th:text="${participant.prenom}" />
+            <td th:text="${participant.nom}" />
+            <td th:text="${participant.email}" />
+            <td>
+                <a th:href="@{/updateParticipant(id=${participant.id})}" class="btn btn-info">Update</a>
+                <a th:href="@{/deleteParticipant(id=${participant.id})}" class="btn btn-danger ml-2">Delete</a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/home}" class="btn btn-primary">Retour à l'accueil</a>
+</div>
+
+
+</body>
+
+</html>
