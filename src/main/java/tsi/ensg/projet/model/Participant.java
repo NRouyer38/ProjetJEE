@@ -13,25 +13,25 @@ public class Participant {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name="increment", strategy = "increment")
 
-    @Column(name = "Id")
+    @Column(name = "id")
     private long id;
 
-    @Column(nullable = false)
+    @Column
     private String prenom;
 
-    @Column(nullable = false)
+    @Column
     private String nom;
 
-    @Column(nullable = false)
+    @Column
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private String date_naiss;
 
-    @Column(nullable = false)
+    @Column
     private String organisation;
 
-    @Column(nullable = false)
+    @Column
     private String observations;
 
     @ManyToOne

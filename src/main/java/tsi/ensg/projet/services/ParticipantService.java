@@ -30,4 +30,6 @@ public class ParticipantService {
     public void delete(Participant participant) {
         repository.delete(participant);
     }
+
+    public void deleteById(Long id) {repository.deleteById(id);}
 }
