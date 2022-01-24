@@ -17,11 +17,17 @@
 
     <form th:action="@{/saveParticipant}" th:object="${participant}" method="POST">
 
-        <input type="text" th:field="*{nom}" class="form-control col-4 mb-4" placeholder="Enter intitule" />
+        <input type="text" th:field="*{nom}" class="form-control col-4 mb-4" placeholder="nom" />
 
-        <input type="text" th:field="*{prenom}" class="form-control col-4 mb-4" placeholder="Enter theme" />
+        <input type="text" th:field="*{prenom}" class="form-control col-4 mb-4" placeholder="prenom" />
 
-        <input type="text" th:field="*{email}" class="form-control col-4 mb-4" placeholder="Enter date" />
+        <input type="text" th:field="*{email}" class="form-control col-4 mb-4" placeholder="email" />
+
+        <input type="text" th:field="*{date_naiss}" class="form-control col-4 mb-4" placeholder="date de naissance" />
+
+        <input type="text" th:field="*{organisation}" class="form-control col-4 mb-4" placeholder="organisation" />
+
+        <input type="text" th:field="*{observations}" class="form-control col-4 mb-4" placeholder="observation" />
 
         <button type="submit" class="btn btn-primary col-2">Save</button>
         <input type="hidden" th:field="*{id}" />
