@@ -6,16 +6,20 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import tsi.ensg.projet.model.Evenement;
 import tsi.ensg.projet.model.Participant;
+import tsi.ensg.projet.services.EvenementService;
 import tsi.ensg.projet.services.ParticipantService;
 
+import java.util.List;
 
 
 @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
 @Controller
 public class ParticipantController{
 
-
+    @Autowired
+    EvenementService evenementService;
     @Autowired
     ParticipantService participantService;
 
@@ -32,6 +36,7 @@ public class ParticipantController{
         return "list_participant";
     }
 
+
     /**
      * page for Get form for add an Participant
      * @param model
@@ -39,7 +44,11 @@ public class ParticipantController{
      */
     @GetMapping("/addParticipantForm")
     public String participantForm (Model model) {
-        model.addAttribute("participant", new Participant());
+        //
+        List<Evenement> listEvenements =  evenementService.findAll();
+        Participant participant = new Participant();
+        model.addAttribute("participant", participant);
+        model.addAttribute("listEvenements", listEvenements);
         return "add_participant_form";
     }
 
@@ -65,9 +74,9 @@ public class ParticipantController{
      */
     @GetMapping("/updateParticipant")
     public String showUpdateForm(@RequestParam Long id, Model model) {
-
+        List<Evenement> listEvenements =  evenementService.findAll();
         model.addAttribute("participant", participantService.findById(id).get());
-
+        model.addAttribute("listEvenements", listEvenements);
         return "add_participant_form";
     }
 
@@ -81,4 +90,5 @@ public class ParticipantController{
         participantService.deleteById(id);
         return "redirect:/listParticipant";
     }
+
 }
