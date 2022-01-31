@@ -13,7 +13,7 @@
 2. Connectez avec l'utilisateur postgres en utilisant la commande suivante :
 - sudo -i -u postgres
 3. Lancez l'invite de commande Postgresql à l'aide de la commande suivante:
-- psql '''
+- psql
 4. Créer un utilisateur
 - CREATE USER test;
 5. Donnez-lui le droit de créer un base de données.
