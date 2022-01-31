@@ -15,23 +15,44 @@ public class EvenementService {
     @Autowired
     private EvenementRepo repository;
 
+    /**
+     * find All Evenement in repo
+     * @return List of all Evenement
+     */
     public List<Evenement> findAll() {
         List<Evenement> events = (List<Evenement>) repository.findAll();
         return events;
     }
 
+    /**
+     * save an Evenement in repo
+     * @param event
+     */
     public void save(Evenement event) {  // pas testé avec persist !
         repository.save(event);
     }
 
+    /**
+     * find Evenement by his ID
+     * @param id
+     * @return an Evenement
+     */
     public Optional<Evenement> findById(Long id) {
         return repository.findById(id);
     }
 
+    /**
+     * delete an Evenement
+     * @param event
+     */
     public void delete(Evenement event) {
         repository.delete(event);
     }
 
+    /**
+     * Delete an Evenement with his ID
+     * @param id
+     */
     public void deleteById(Long id) {repository.deleteById(id);}
 
 

@@ -34,8 +34,16 @@ public class Participant {
     @Column
     private String observations;
 
+    public Evenement getEvenement() {
+        return evenement;
+    }
+
+    public void setEvenement(Evenement evenement) {
+        this.evenement = evenement;
+    }
+
     @ManyToOne
-    @JoinColumn(name="participantId")
+    @JoinColumn(name="evenementId")
     private Evenement evenement;
 
     public Participant() {
